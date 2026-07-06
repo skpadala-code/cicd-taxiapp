@@ -13,10 +13,15 @@ data "aws_vpc" "default" {
   default = true
 }
 
-data "aws_subnets" "default" {
+data "aws_subnet" "az" {
   filter {
-    name   = "vpc-id"
-    values = [data.aws_vpc.default.id]
+    name   = "availability-zone"
+    values = ["us-east-1a"]
+  }
+
+  filter {
+    name   = "default-for-az"
+    values = ["true"]
   }
 }
 
@@ -162,10 +167,10 @@ resource "aws_ecr_repository" "app_repo" {
 
 # ANSIBLE
 resource "aws_instance" "ansible" {
-  ami                    = "ami-0030e4319cbf4dbf2"
+  ami                    = "ami-0f8a61b66d1accaee"
   instance_type          = "c7i-flex.large"
   key_name               = "taxi"
-  subnet_id              = data.aws_subnets.default.ids[0]
+  subnet_id              = data.aws_subnet.az.id
   vpc_security_group_ids = [aws_security_group.demo-sg.id]
 
   iam_instance_profile = aws_iam_instance_profile.ec2_profile.name
@@ -177,10 +182,10 @@ resource "aws_instance" "ansible" {
 
 # JENKINS MASTER
 resource "aws_instance" "jenkins_master" {
-  ami                    = "ami-0030e4319cbf4dbf2"
+  ami                    = "ami-0f8a61b66d1accaee"
   instance_type          = "c7i-flex.large"
   key_name               = "taxi"
-  subnet_id              = data.aws_subnets.default.ids[0]
+  subnet_id              = data.aws_subnet.az.id
   vpc_security_group_ids = [aws_security_group.demo-sg.id]
 
   iam_instance_profile = aws_iam_instance_profile.ec2_profile.name
@@ -192,10 +197,10 @@ resource "aws_instance" "jenkins_master" {
 
 # JENKINS SLAVE
 resource "aws_instance" "jenkins_slave" {
-  ami                    = "ami-0030e4319cbf4dbf2"
+  ami                    = "ami-0f8a61b66d1accaee"
   instance_type          = "c7i-flex.large"
   key_name               = "taxi"
-  subnet_id              = data.aws_subnets.default.ids[0]
+  subnet_id              = data.aws_subnet.az.id
   vpc_security_group_ids = [aws_security_group.demo-sg.id]
 
   iam_instance_profile = aws_iam_instance_profile.ec2_profile.name
