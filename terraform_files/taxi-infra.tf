@@ -135,7 +135,7 @@ resource "aws_iam_instance_profile" "ec2_profile" {
 # S3 BUCKET
 ########################
 resource "aws_s3_bucket" "artifact_bucket" {
-  bucket = "my-war-bucket"
+  bucket = "my3-war-bucket"
 
   tags = {
     Name = "war-artifacts"
