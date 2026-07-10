@@ -1,5 +1,5 @@
 [jenkins-master]
-172.31.14.182
+172.31.14.182terraform 
 
 [jenkins-master:vars]
 ansible_user=ubuntu
