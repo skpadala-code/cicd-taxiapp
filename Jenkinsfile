@@ -33,7 +33,7 @@ environment {
                 script {
                     // Run SonarQube analysis
                     sh """
-                    mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar \
+                    mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:3.9.16:sonar \
                     -Dsonar.projectKey=taxi-app6_taxi \
                     -Dsonar.organization=taxi-app6 \
                     -Dsonar.host.url=https://sonarcloud.io \
