@@ -4,7 +4,7 @@ pipeline {
             label 'maven'
         }
     }
-    tools {
+tools {
     jdk 'JDK11'
     }
 environment {
