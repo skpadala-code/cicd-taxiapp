@@ -1,5 +1,5 @@
 [jenkins-master]
-172.31.1.113
+172.31.1.185
 
 [jenkins-master:vars]
 ansible_user=ubuntu
@@ -7,7 +7,7 @@ ansible_ssh_private_key_file=/opt/taxi.pem
 ansible_ssh_common_args='-o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null'
 
 [jenkins-slave]
-172.31.5.136
+172.31.11.121
 
 [jenkins-slave:vars]
 ansible_user=ubuntu
