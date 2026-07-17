@@ -32,9 +32,7 @@ environment {
             steps {
                 script {
                     // Run SonarQube analysis
-                    tools {
-                            jdk 'JDK11'
-                        }
+                    tools 
                     sh """
                     mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar \
                     -Dsonar.projectKey=taxi-app6_taxi \
