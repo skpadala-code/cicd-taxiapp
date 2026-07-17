@@ -13,7 +13,7 @@
   <properties>
     <project.build.sourceEncoding>utf-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>utf-8</project.reporting.outputEncoding>
-    <sonar.organization>taxi-app1234</sonar.organization>
+    <sonar.organization>taxi-app6</sonar.organization>
   </properties>
 
   <modules>
