@@ -37,7 +37,7 @@ environment {
                 script {
                     // Run SonarQube analysis
                     sh """
-                    export JAVA_HOME = /usr/lib/jvm/java-11-openjdk-amd64
+                    export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
                     mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar \
                     -Dsonar.projectKey=taxi-app6_taxi \
                     -Dsonar.organization=taxi-app6 \
