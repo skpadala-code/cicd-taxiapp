@@ -31,7 +31,7 @@ environment {
         stage('SonarQube Analysis') {
 
             tools {
-                    jdk 'JDK11'
+                    jdk 'jdk11'
                  }
             steps {
                 script {
