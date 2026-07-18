@@ -12,7 +12,7 @@ environment {
     S3_BUCKET = 'my-war-bucket23'
     ECR_REPO = '717292228966.dkr.ecr.us-east-1.amazonaws.com/taxi-booking-app'
     IMAGE_TAG = "v1.${BUILD_NUMBER}"
-    JAVA_HOME="/usr/lib/jvm/java-21-openjdk-amd64/bin"
+    JAVA_HOME = '/usr/lib/jvm/java-21-openjdk-amd64'
 }
    stages {
         stage("build"){
