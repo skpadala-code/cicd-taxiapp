@@ -5,7 +5,7 @@ pipeline {
         }
     }
 tools {
-    jdk 'JDK11'
+     jdk 'JDK11'
     }
 environment {
     PATH = "/opt/apache-maven-3.9.16/bin:$PATH"
