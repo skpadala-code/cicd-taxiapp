@@ -29,6 +29,10 @@ environment {
             }
         }
         stage('SonarQube Analysis') {
+
+            tools {
+                    jdk 'JDK11'
+                 }
             steps {
                 script {
                     // Run SonarQube analysis
