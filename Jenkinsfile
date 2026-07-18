@@ -4,10 +4,9 @@ pipeline {
             label 'maven'
         }
     }
-tools
-    {
-     jdk 'jdk-11'
-   }
+tools {
+     jdk 'JDK11'
+    }
 environment {
     PATH = "/opt/apache-maven-3.9.16/bin:$PATH"
     (SONAR_TOKEN = credentials('SONAR_TOKEN'))
@@ -15,7 +14,6 @@ environment {
     S3_BUCKET = 'my-war-bucket23'
     ECR_REPO = '717292228966.dkr.ecr.us-east-1.amazonaws.com/taxi-booking-app'
     IMAGE_TAG = "v1.${BUILD_NUMBER}"
-    
 }
    stages {
         stage("build"){
