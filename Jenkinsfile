@@ -4,9 +4,7 @@ pipeline {
             label 'maven'
         }
     }
-tools {
-     jdk 'JDK11'
-    }
+
 environment {
     PATH = "/opt/apache-maven-3.9.16/bin:$PATH"
     (SONAR_TOKEN = credentials('SONAR_TOKEN'))
